@@ -1,0 +1,41 @@
+<script>
+    /*
+    mediaFinalAprovadoReprovado - Recebe as notas das 2 provas e 2 exercícios de programação e retorna se o aluno foi ou não aprovado. As provas têm peso 7 e os exercícios têm peso 3. Cada parcial tem peso igual.  Uma forma de resolver é calcular a 1a parcial, com a média ponderada entre  p1 e ep1, depois calcular a 2a parcial, com as notas de p2 e ep2 e depois calcular a média aritmética entre a 1a e a 2a parcial. A média para passar é 6.0
+    */
+    //Entrada
+    const p1 = Number(prompt("Informe nota da primeira prova"))
+    const ep1 = Number(prompt("Informe nota do primeiro exercício"))
+    const p2 = Number(prompt("Informe nota da segunda prova"))
+    const ep2 = Number(prompt("Informe nota do segundo exercício"))
+
+    //Processamento
+    //Procedural - MUITAS Constantes
+    const pesoTotal = 10
+    const pesoProva = 7
+    const pesoExercicio = 3
+    const notaProva1 = p1 * (pesoProva / pesoTotal)
+    const notaExercicio1 = ep1 * (pesoExercicio / pesoTotal)
+    const notaParcial1 = notaProva1 + notaExercicio1
+
+    const notaProva2 = p2 * (pesoProva / pesoTotal)
+    const notaExercicio2 = ep2 * (pesoExercicio / pesoTotal)
+    const notaParcial2 = notaProva2 + notaExercicio2
+
+    const mediaFinal = (notaParcial1 + notaParcial2) / 2
+
+    //Usando 5 Constantes
+    //const final = ((p1 * 0.7 + ep1 * 0.3) + (p2 * 0.7 + ep2 * 0.3)) / 2
+    
+    //Usando 7 Constantes
+    /*
+    const parcial1 = (p1 * 0.7 + ep1 * 0.3)
+    const parcial2 = (p2 * 0.7 + ep2 * 0.3)
+    const final = (parcial1 + parcial2) / 2
+    */
+
+    //Saída
+    if (mediaFinal >= 6)
+        document.write(`O aluno foi aprovado! MF: ${mediaFinal.toFixed(2)}`)
+    else
+        document.write(`O aluno foi reprovado! MF: ${mediaFinal.toFixed(2)}`)
+</script>
